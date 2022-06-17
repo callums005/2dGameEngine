@@ -3,6 +3,7 @@
 #include "../Core/PCH.h"
 
 #include "Event.h"
+#include "../Input/Input.h"
 
 namespace Engine
 {

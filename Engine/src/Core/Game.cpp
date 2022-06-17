@@ -8,6 +8,7 @@ namespace Engine
 	{
 		// Makes sure that the events are created as soon as a class is created
 		CreateEvents();
+		Input::Init();
 	}
 
 	Game::~Game()
@@ -27,7 +28,7 @@ namespace Engine
 			m_Window->PollEvents();
 			m_Window->Render();
 			OnUpdate();
-
+			Input::UpdateReleasedStates();
 		}
 
 		EventDispatcher::DispatchEvent(EventType::OnApplicationExit, true);

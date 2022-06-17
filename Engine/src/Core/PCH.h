@@ -20,7 +20,7 @@
 
 namespace Engine
 {
-	enum class EventType
+	const enum class EventType
 	{
 		OnApplicationStart, OnApplicationExit, // Application Events
 		OnWindowClose, OnWindowResize, OnWindowMove, // Window Events
@@ -29,7 +29,7 @@ namespace Engine
 		UserDefined // Other
 	};
 
-	enum class Keys {
+	const enum class Keys {
 		KEY_UNKNOWN = -1, 
 		KEY_A = 0, 
 		KEY_B, 
@@ -135,7 +135,7 @@ namespace Engine
 		KEY_KEYCOUNT,
 	};
 
-	enum class MouseButton
+	const enum class MouseButton
 	{
 		MOUSE_BUTTON_UNKNOWN = -1,
 		MOUSE_BUTTON_LEFT = 0, 

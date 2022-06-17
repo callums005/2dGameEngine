@@ -8,7 +8,7 @@ public:
 
 	void LogKeyPress(Engine::Event& e)
 	{
-		std::cout << "KEY PRESS: " << (int)e.KeyEvent->KeyCode << std::endl;
+		std::cout << "KEY PRESSED: " << (int)e.KeyEvent->KeyCode << std::endl;
 	}
 
 	void OnStart()
