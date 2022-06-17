@@ -11,6 +11,7 @@ namespace Engine
 		Engine::EventDispatcher::GetEventFromName("KeyUp") += [](Engine::Event& ev) {HandleEvent(ev); };
 		Engine::EventDispatcher::GetEventFromName("MouseDown") += [](Engine::Event& ev) {HandleEvent(ev); };
 		Engine::EventDispatcher::GetEventFromName("MouseUp") += [](Engine::Event& ev) {HandleEvent(ev); };
+		Engine::EventDispatcher::GetEventFromName("MouseMove") += [](Engine::Event& ev) {HandleEvent(ev); };
 
 		for (int i = 0; i < 34; i++)
 		{
@@ -32,6 +33,11 @@ namespace Engine
 			mouseButtonStates[(int)e.MouseButtonEvent->Button] = InputState::Pressed;
 		else if (e.Name == "MouseUp")
 			mouseButtonStates[(int)e.MouseButtonEvent->Button] = InputState::Released;
+		else if (e.Name == "MouseMove")
+		{
+			mouseX = e.MouseMoveEvent->MouseX;
+			mouseY = e.MouseMoveEvent->MouseY;
+		}
 	}
 
 	void Input::UpdateReleasedStates()
@@ -98,6 +104,11 @@ namespace Engine
 			return true;
 
 		return false;
+	}
+
+	std::pair<int, int> Input::GetMousePos()
+	{
+		return std::pair<int, int>(mouseX, mouseY);
 	}
 
 }
