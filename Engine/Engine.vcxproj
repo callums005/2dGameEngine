@@ -86,6 +86,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\ECS\ComponentBase.h" />
+    <ClInclude Include="src\ECS\Components\BoxCollider.h" />
+    <ClInclude Include="src\ECS\Components\Colour.h" />
+    <ClInclude Include="src\ECS\Components\RectMesh.h" />
+    <ClInclude Include="src\ECS\Components\Renderer.h" />
+    <ClInclude Include="src\ECS\Components\Transform.h" />
+    <ClInclude Include="src\ECS\Entity.h" />
+    <ClInclude Include="src\ECS\EntityManager.h" />
     <ClInclude Include="src\Input\Input.h" />
     <ClInclude Include="src\Core\Game.h" />
     <ClInclude Include="src\Core\EntryPoint.h" />
@@ -104,6 +112,7 @@
     <ClInclude Include="src\Graphics\Window\Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ECS\EntityManager.cpp" />
     <ClCompile Include="src\Input\Input.cpp" />
     <ClCompile Include="src\Core\Game.cpp" />
     <ClCompile Include="src\EventSystem\EventDispatcher.cpp" />

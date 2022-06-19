@@ -1,7 +1,5 @@
 #include "Game.h"
 
-#include "../EventSystem/EventDispatcher.h"
-
 namespace Engine
 {
 	Game::Game()
@@ -25,6 +23,7 @@ namespace Engine
 		// Main Game Loop
 		while (m_Window->GetWindowOpenState())
 		{
+			ECS::Update();
 			m_Window->PollEvents();
 			m_Window->Render();
 			OnUpdate();

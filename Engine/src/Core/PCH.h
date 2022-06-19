@@ -17,6 +17,7 @@
 #include <mutex>
 
 #define STRING std::string
+#define boolean bool
 
 namespace Engine
 {
@@ -27,6 +28,16 @@ namespace Engine
 		MouseDown, MouseUp, MouseMove, MouseScroll, // Mouse Events
 		KeyDown, KeyUp, // Keyboard Events
 		UserDefined // Other
+	};
+
+	const enum class RenderShape
+	{
+		Rectangle
+	};
+
+	const enum class RenderType
+	{
+		Colour, Texture
 	};
 
 	const enum class Keys {

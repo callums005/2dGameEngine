@@ -2,7 +2,9 @@
 
 #include "../Core/PCH.h"
 
-namespace Utilities
+#include "SFML/Graphics/Color.hpp"
+
+namespace Types
 {
 	class RGBA
 	{
@@ -53,6 +55,11 @@ namespace Utilities
 			g -= rhs.g;
 			b -= rhs.b;
 			a -= rhs.a;
+		}
+
+		sf::Color toSF()
+		{
+			return sf::Color(r, g, b, a);
 		}
 	};
 }

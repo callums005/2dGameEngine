@@ -3,7 +3,9 @@
 #include "../../Core/PCH.h"
 
 #include "../../EventSystem/EventDispatcher.h"
+#include "../../ECS/EntityManager.h"
 #include "SFML/Graphics.hpp"
+
 
 namespace Engine
 {
@@ -20,15 +22,16 @@ namespace Engine
 		Window()
 			: m_Window(nullptr) {}
 
-		bool InitWindow(WindowProps _props);
+		boolean InitWindow(WindowProps _props);
 		void CloseWindow();
 
 		void Render();
 		void PollEvents();
 
 		sf::RenderWindow* GetSFWindow();
-		bool GetWindowOpenState();
+		boolean GetWindowOpenState();
 	private:
 		sf::RenderWindow* m_Window;
+		std::map<int, EntityVector> m_RenderOrder;
 	};
 }

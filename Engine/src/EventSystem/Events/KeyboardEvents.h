@@ -8,6 +8,6 @@ namespace Engine
 	{
 	public:
 		Keys KeyCode = Keys::KEY_UNKNOWN;
-		bool State = false;
+		boolean State = false;
 	};
 }

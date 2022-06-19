@@ -28,7 +28,7 @@ namespace Engine
 
 		// Stores a list of functions to call when a event is dispatched
 		std::vector<std::function<void(Event&)>> SubscribedCallbacks;
-		bool IsHandled;
+		boolean IsHandled;
 
 		/// <summary>
 		/// Allows the client to subscribe to events

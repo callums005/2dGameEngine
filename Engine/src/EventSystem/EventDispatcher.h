@@ -13,7 +13,7 @@ namespace Engine
 		static size_t GenerateEvent(const char* _name, EventType _type);
 
 		#define EventFunc(function) [this](Engine::Event& ev) {this->function(ev);}
-		static bool DispatchEvent(EventType _dispatchEventType, bool _markAsHandled = false);
+		static boolean DispatchEvent(EventType _dispatchEventType, boolean _markAsHandled = false);
 		static Event& GetEventFromID(size_t _eventID);
 		static Event& GetEventFromName(STRING _eventName);
 		static size_t GetEventID(STRING _eventName);

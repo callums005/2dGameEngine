@@ -3,6 +3,8 @@
 #include "PCH.h"
 
 #include "../Graphics/Window/Window.h"
+#include "../EventSystem/EventDispatcher.h"
+#include "../ECS/EntityManager.h"
 
 namespace Engine
 {

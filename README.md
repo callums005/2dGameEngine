@@ -1,5 +1,7 @@
 # 2D Game Engine
 
+You can find the project Trello [here]("https://trello.com/b/G24FWYry/2d-game-engine").
+
 ## Technical Specs
 - Language: C++
 - IDE: Visual Studio 2022
@@ -165,3 +167,42 @@ void OnStart()
 ```
 
 Use the `Logger` functions the same as `printf()`, you can find references [here](https://cplusplus.com/reference/cstdio/printf/).
+
+---
+
+# Entity Component System
+You are able to create entities(parents) with components(children). You can access entities with the `ECS` namespace and components with the `Components` namespace.
+
+## Creating an entity
+To create an entity, give the `AddEntity` function a tag to assign with the entity. The function will return a pointer that points to the entity stored in the engine.
+```cpp
+Engine::Entity* e = Engine::ECS::AddEntity("player");
+```
+
+## Deleting an entity
+To delete an entity, use the `Destroy` function. Note that the entity will be destroyed at the start of the next frame.
+```cpp
+e->Destroy();
+```
+
+## Adding components to an entity
+To add a component to an entity, you must first have a pointer to the entity. Simply access the class on the entity and assign it a new component.
+```cpp
+e->transform = new Engine::Components::Transform(Types::Vec2f(5.0f, 5.0f), Types::Vec2f(100.0f, 100.0f), Types::Vec2f(0.2f, 0.2f), 0);
+```
+
+## Deleting a component
+To delete a component, assign the entity's component class as a `nullptr`
+```cpp
+e->transform = nullptr;
+```
+
+## Components
+
+| Component | Description | Args |
+| --------- | ----------- | ---- |
+| Transform | Stores position, size, velocity and rotation of an entity. | Vec2f pos, Vec2f size, Vec2f vel, float rotation |
+| BoxCollider | Allows 2D box collision. **Requires Transform**. | Vec2f size |
+| RectMesh | Renders a square or rectangle shape. **Requires Transform**. | int outlineThickness, RGBA outlineColour |
+| Colour | Tells the renderer what colour to assign to the entity. **Requires Mesh**. | RGBA colour |
+| Renderer | Renderers an entity to the screen. **Requires Mesh, Colour/Texture, Transform** | sf::Mesh object, int order, RenderType renderType, RenderShape shape |

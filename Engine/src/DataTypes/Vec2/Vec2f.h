@@ -2,7 +2,9 @@
 
 #include "../../Core/PCH.h"
 
-namespace Utilities
+#include "SFML/System/Vector2.hpp"
+
+namespace Types
 {
 	class Vec2f
 	{
@@ -49,9 +51,9 @@ namespace Utilities
 			y -= rhs.y;
 		}
 
-		//static sf::Vector2f ConvertToSF(Vec2f vec)
-		//{
-		//	return sf::Vector2f(vec.x, vec.y);
-		//}
+		sf::Vector2f toSF()
+		{
+			return sf::Vector2f(x, y);
+		}
 	};
 }

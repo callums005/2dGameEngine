@@ -15,7 +15,7 @@ namespace Engine
 	{
 	public:
 		MouseButton Button = MouseButton::MOUSE_BUTTON_UNKNOWN;
-		bool State = false;
+		boolean State = false;
 	};
 
 	class MouseScrollEvent

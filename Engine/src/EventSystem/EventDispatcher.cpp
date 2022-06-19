@@ -57,9 +57,9 @@ namespace Engine
 	/// then marked as handled
 	/// </summary>
 	/// <param name="_dispatchEventType">EventType</param>
-	/// <param name="_markAsHandled">bool</param>
-	/// <returns>bool</returns>
-	bool EventDispatcher::DispatchEvent(EventType _dispatchEventType, bool _markAsHandled)
+	/// <param name="_markAsHandled">boolean</param>
+	/// <returns>boolean</returns>
+	boolean EventDispatcher::DispatchEvent(EventType _dispatchEventType, boolean _markAsHandled)
 	{
 		for (auto e : m_Events)
 		{

@@ -22,18 +22,18 @@ namespace Engine
 		static void UpdateReleasedStates();
 
 		// Client Functions
-		static bool IsKeyDown(Keys _keyCode);
-		static bool IsKeyReleasedThisFrame(Keys _keyCode);
-		static bool IsKeyUp(Keys _keyCode);
-		static bool IsMouseButtonDown(MouseButton _button);
-		static bool IsMouseButtonReleasedThisFrame(MouseButton _button);
-		static bool IsMouseButtonUp(MouseButton _button);
+		static boolean IsKeyDown(Keys _keyCode);
+		static boolean IsKeyReleasedThisFrame(Keys _keyCode);
+		static boolean IsKeyUp(Keys _keyCode);
+		static boolean IsMouseButtonDown(MouseButton _button);
+		static boolean IsMouseButtonReleasedThisFrame(MouseButton _button);
+		static boolean IsMouseButtonUp(MouseButton _button);
 		static std::pair<int, int> GetMousePos();
 	private:
 		static InputState inline keyStates[34];
 		static InputState inline mouseButtonStates[6];
 		static int inline mouseX = 0;
 		static int inline mouseY = 0;
-		static bool inline isInit = false;
+		static boolean inline isInit = false;
 	};
 }

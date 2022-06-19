@@ -56,7 +56,7 @@ namespace Engine
 
 	// Keys
 
-	bool Input::IsKeyDown(Keys _keyCode)
+	boolean Input::IsKeyDown(Keys _keyCode)
 	{
 		if (keyStates[(int)_keyCode] == InputState::Pressed)
 			return true;
@@ -64,7 +64,7 @@ namespace Engine
 		return false;
 	}
 
-	bool Input::IsKeyReleasedThisFrame(Keys _keyCode)
+	boolean Input::IsKeyReleasedThisFrame(Keys _keyCode)
 	{
 		if (keyStates[(int)_keyCode] == InputState::Released)
 			return true;
@@ -72,7 +72,7 @@ namespace Engine
 		return false;
 	}
 
-	bool Input::IsKeyUp(Keys _keyCode)
+	boolean Input::IsKeyUp(Keys _keyCode)
 	{
 		if (keyStates[(int)_keyCode] == InputState::Up)
 			return true;
@@ -82,7 +82,7 @@ namespace Engine
 
 	// Mouse
 
-	bool Input::IsMouseButtonDown(MouseButton _button)
+	boolean Input::IsMouseButtonDown(MouseButton _button)
 	{
 		if (mouseButtonStates[(int)_button] == InputState::Pressed)
 			return true;
@@ -90,7 +90,7 @@ namespace Engine
 		return false;
 	}
 
-	bool Input::IsMouseButtonReleasedThisFrame(MouseButton _button)
+	boolean Input::IsMouseButtonReleasedThisFrame(MouseButton _button)
 	{
 		if (mouseButtonStates[(int)_button] == InputState::Released)
 			return true;
@@ -98,7 +98,7 @@ namespace Engine
 		return false;
 	}
 
-	bool Input::IsMouseButtonUp(MouseButton _button)
+	boolean Input::IsMouseButtonUp(MouseButton _button)
 	{
 		if (mouseButtonStates[(int)_button] == InputState::Up)
 			return true;

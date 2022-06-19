@@ -1,14 +1,13 @@
 #include "Window.h"
 
-
 namespace Engine
 {
 	/// <summary>
 	/// Creates a window and returns success state
 	/// </summary>
 	/// <param name="_props">Engine::WindowProps</param>
-	/// <returns>bool</returns>
-	bool Window::InitWindow(WindowProps _props)
+	/// <returns>boolean</returns>
+	boolean Window::InitWindow(WindowProps _props)
 	{
 		m_Window = new sf::RenderWindow(sf::VideoMode(_props.width, _props.height), _props.title);
 
@@ -36,7 +35,33 @@ namespace Engine
 	void Window::Render()
 	{
 		m_Window->clear();
-		// Render object here
+		m_RenderOrder.clear();
+
+		// Sets the rendering order
+		for (Entity* e : ECS::GetEntities())
+			if (e->renderer && e->isEnabled())
+				m_RenderOrder[e->renderer->m_RenderOrder].push_back(e);
+	
+		// Renders objects in that order
+
+		for (int i = 0; i < 10; i++)
+		{
+			for (Entity* e : m_RenderOrder[i])
+			{
+				switch (e->renderer->m_RenderType)
+				{
+				case RenderType::Colour:
+					if (e->renderer->m_RenderShape == RenderShape::Rectangle && e->rectMesh && e->colour)
+						e->rectMesh->m_Shape.setFillColor(e->colour->m_Colour.toSF());
+					break;
+				case RenderType::Texture:
+					break;
+				}
+				m_Window->draw(*e->renderer->m_Object);
+			}
+		}
+
+
 		m_Window->display();
 	}
 
@@ -99,7 +124,7 @@ namespace Engine
 		return m_Window;
 	}
 
-	bool Window::GetWindowOpenState()
+	boolean Window::GetWindowOpenState()
 	{
 		return m_Window->isOpen();
 	}
