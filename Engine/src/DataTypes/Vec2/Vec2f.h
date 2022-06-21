@@ -39,6 +39,12 @@ namespace Types
 			return Vec2f(x * scale.x, y * scale.y);
 		}
 
+		void operator = (const Vec2f& rhs)
+		{
+			x = rhs.x;
+			y = rhs.y;
+		}
+
 		void operator += (const Vec2f& rhs) // rhs: right hand side
 		{
 			x += rhs.x;

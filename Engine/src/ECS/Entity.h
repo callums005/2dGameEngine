@@ -7,6 +7,7 @@
 #include "Components/Colour.h"
 #include "Components/Texture.h"
 #include "Components/Renderer.h"
+#include "Components/Parent.h"
 
 namespace Engine
 {
@@ -26,6 +27,7 @@ namespace Engine
 			delete colour;
 			delete texture;
 			delete renderer;
+			delete parent;
 		}
 
 		// Components
@@ -36,6 +38,7 @@ namespace Engine
 		Components::Colour* colour = nullptr;
 		Components::Texture* texture = nullptr;
 		Components::Renderer* renderer = nullptr;
+		Components::Parent* parent = nullptr;
 		
 
 		// Entity Functions
