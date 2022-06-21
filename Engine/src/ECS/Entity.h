@@ -5,6 +5,7 @@
 #include "Components/BoxCollider.h"
 #include "Components/RectMesh.h"
 #include "Components/Colour.h"
+#include "Components/Texture.h"
 #include "Components/Renderer.h"
 
 namespace Engine
@@ -23,6 +24,7 @@ namespace Engine
 			delete boxCollider;
 			delete rectMesh;
 			delete colour;
+			delete texture;
 			delete renderer;
 		}
 
@@ -32,7 +34,9 @@ namespace Engine
 		Components::BoxCollider* boxCollider = nullptr;
 		Components::RectMesh* rectMesh = nullptr;
 		Components::Colour* colour = nullptr;
+		Components::Texture* texture = nullptr;
 		Components::Renderer* renderer = nullptr;
+		
 
 		// Entity Functions
 		boolean isEnabled() { return m_Enabled; }

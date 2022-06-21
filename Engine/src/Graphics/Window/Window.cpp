@@ -11,6 +11,8 @@ namespace Engine
 	{
 		m_Window = new sf::RenderWindow(sf::VideoMode(_props.width, _props.height), _props.title);
 
+		m_Window->setFramerateLimit(60);
+
 		if (!m_Window)
 			return false;
 
@@ -52,9 +54,20 @@ namespace Engine
 				{
 				case RenderType::Colour:
 					if (e->renderer->m_RenderShape == RenderShape::Rectangle && e->rectMesh && e->colour)
+					{
+						e->rectMesh->m_Shape.setTexture(nullptr);
 						e->rectMesh->m_Shape.setFillColor(e->colour->m_Colour.toSF());
+					}
 					break;
 				case RenderType::Texture:
+					if (e->renderer->m_RenderShape == RenderShape::Rectangle && e->rectMesh && e->texture)
+					{
+						if (e->rectMesh->m_Shape.getTexture() != &e->texture->m_Texture)
+						{
+							e->rectMesh->m_Shape.setFillColor(sf::Color::White);
+							e->rectMesh->m_Shape.setTexture(&e->texture->m_Texture);
+						}
+					}
 					break;
 				}
 				m_Window->draw(*e->renderer->m_Object);
