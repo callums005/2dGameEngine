@@ -61,9 +61,46 @@ namespace Engine
 		m_AddEntityBuffer.push_back(e);
 		return e;
 	}
-	boolean ECS::IsColliding(const Entity* e1, const Entity* e2)
+	boolean ECS::IsColliding(Entity* e1,  Entity* e2)
 	{
 		if (!e1->m_Enabled || !e2->m_Enabled)
+			return false;
+
+		EntityVector e1Children;
+		EntityVector e2Children;
+
+		e1Children.push_back(e1);
+		e2Children.push_back(e2);
+
+		for (Entity* e : m_Entities)
+		{
+			if (!e->m_Enabled)
+				continue;
+
+			if (!e->parent)
+				continue;
+
+			if (e->parent->m_EntityParentID == e1->m_Id)
+				e1Children.push_back(e);
+			else if (e->parent->m_EntityParentID == e2->m_Id)
+				e2Children.push_back(e);
+		}
+
+		for (Entity* child1 : e1Children)
+		{
+			for (Entity* child2 : e2Children)
+			{
+				if (collisionDetection(child1, child2))
+					return true;
+			}
+		}
+		
+		return false;
+	}
+
+	boolean ECS::collisionDetection(const Entity* e1, const Entity* e2)
+	{
+		if (!e1->boxCollider || !e2->boxCollider)
 			return false;
 
 		if (e1->boxCollider && e2->boxCollider)
@@ -81,14 +118,17 @@ namespace Engine
 
 		return false;
 	}
+
 	EntityVector& ECS::GetEntities()
 	{
 		return m_Entities;
 	}
+
 	EntityVector& ECS::GetEntitiesByTag(const STRING& tag)
 	{
 		return m_EntityMap[tag];
 	}
+
 	Entity* ECS::GetEntityByID(const size_t id)
 	{
 		for (Entity* e : m_Entities)

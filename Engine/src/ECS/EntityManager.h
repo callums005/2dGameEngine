@@ -14,7 +14,7 @@ namespace Engine
 	public:
 		static void Update();
 		static Entity* AddEntity(const STRING& tag);
-		static boolean IsColliding(const Entity* e1, const Entity* e2);
+		static boolean IsColliding(Entity* e1, Entity* e2);
 		static EntityVector& GetEntities(); // Returns alll entities
 		static EntityVector& GetEntitiesByTag(const STRING& tag); // Returns all entities with the tatg
 		static Entity* GetEntityByID(const size_t id);
@@ -28,6 +28,7 @@ namespace Engine
 
 		static void HandleEntityDelete();
 		static void HandleEntityAdd();
+		static boolean collisionDetection(const Entity* e1, const Entity* e2);
 
 		static inline size_t m_EntityCount = 1;
 	};

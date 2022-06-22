@@ -3,51 +3,19 @@
 class Application : public Engine::Game
 {
 public:
-	Application() { }
-	~Application() { }
-
-	Engine::Entity* e;
-	Engine::Entity* child;
-
-	void LogKeyPress(Engine::Event& e)
-	{
-		std::cout << "KEY PRESSED: " << (int)e.KeyEvent->KeyCode << std::endl;
-	}
+	Application() {}
+	~Application() {}
 
 	void OnStart()
 	{
-		Engine::EventDispatcher::GetEventFromName("KeyDown") += EventFunc(LogKeyPress);	
-
-		e = Engine::ECS::AddEntity("player");
-		e->transform = new Engine::Components::Transform(Types::Vec2f(5.0f, 5.0f), Types::Vec2f(100.0f, 100.0f), Types::Vec2f(0.2f, 0.2f), 0);
-		e->rectMesh = new Engine::Components::RectMesh(0, Types::RGBA(0, 0, 0, 0));
-		e->colour = new Engine::Components::Colour(Types::RGBA(255, 0, 0, 255));
-		e->texture = new Engine::Components::Texture("res/textures/test.png");
-		e->renderer = new Engine::Components::Renderer(&e->rectMesh->m_Shape, 0, Engine::RenderType::Texture, Engine::RenderShape::Rectangle);
-
-		child = Engine::ECS::AddEntity("childOfPlayer");
-		child->transform = new Engine::Components::Transform(Types::Vec2f(0, 0), Types::Vec2f(100.0f, 100.0f), Types::Vec2f(0.0f, 0.0f), 0);
-		child->rectMesh = new Engine::Components::RectMesh(0, Types::RGBA(0, 0, 0, 0));
-		child->colour = new Engine::Components::Colour(Types::RGBA(0, 255, 0, 255));
-		child->renderer = new Engine::Components::Renderer(&child->rectMesh->m_Shape, 0, Engine::RenderType::Colour, Engine::RenderShape::Rectangle);
-		child->parent = new Engine::Components::Parent(e->transform, 
-			Engine::Components::Transform(Types::Vec2f(100, 100), Types::Vec2f(0, 0), Types::Vec2f(0, 0), 0));
 	} 
 
 	void OnUpdate()
 	{
-		if (Engine::Input::IsKeyReleasedThisFrame(Engine::Keys::KEY_E))
-		{
-			if (e->renderer->m_RenderType == Engine::RenderType::Colour)
-				e->renderer->m_RenderType = Engine::RenderType::Texture;
-			else
-				e->renderer->m_RenderType = Engine::RenderType::Colour;
-		}
 	}
 
 	void OnExit()
 	{
-
 	}
 };
 

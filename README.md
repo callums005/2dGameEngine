@@ -205,5 +205,6 @@ e->transform = nullptr;
 | BoxCollider | Allows 2D box collision. **Requires Transform**. | Vec2f size |
 | RectMesh | Renders a square or rectangle shape. **Requires Transform**. | int outlineThickness, RGBA outlineColour |
 | Colour | Tells the renderer what colour to assign to the entity. **Requires Mesh**. | RGBA colour |
-| Texture | Tells the renderer what texture to assign to the entity | **Requires Mesh** | STRING filePath |
+| Texture | Tells the renderer what texture to assign to the entity **Requires Mesh** | STRING filePath |
 | Renderer | Renderers an entity to the screen. **Requires Mesh, Colour/Texture, Transform** | sf::Mesh object, int order, RenderType renderType, RenderShape shape |
+| Parent | Sets the entity's parent object, use offset Transform to position away from parent. **Requires Parent.Transform, Transform** | size_t parentID, Transform* parentTransform, Transform offsetTransform |

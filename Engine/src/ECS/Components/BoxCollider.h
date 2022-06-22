@@ -9,7 +9,7 @@ namespace Engine
 {
 	namespace Components
 	{
-		class BoxCollider : public Component
+		class BoxCollider
 		{
 		public:
 			BoxCollider() {}
