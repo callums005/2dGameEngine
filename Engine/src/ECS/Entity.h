@@ -4,6 +4,8 @@
 #include "Components/Transform.h"
 #include "Components/BoxCollider.h"
 #include "Components/RectMesh.h"
+#include "Components/CircleMesh.h"
+#include "Components/ConvexMesh.h"
 #include "Components/Colour.h"
 #include "Components/Texture.h"
 #include "Components/Renderer.h"
@@ -24,6 +26,7 @@ namespace Engine
 			delete transform;
 			delete boxCollider;
 			delete rectMesh;
+			delete circleMesh;
 			delete colour;
 			delete texture;
 			delete renderer;
@@ -35,6 +38,8 @@ namespace Engine
 		Components::Transform* transform = nullptr;
 		Components::BoxCollider* boxCollider = nullptr;
 		Components::RectMesh* rectMesh = nullptr;
+		Components::CircleMesh* circleMesh = nullptr;
+		Components::ConvexMesh* convexMesh = nullptr;
 		Components::Colour* colour = nullptr;
 		Components::Texture* texture = nullptr;
 		Components::Renderer* renderer = nullptr;

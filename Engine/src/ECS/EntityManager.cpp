@@ -19,6 +19,8 @@ namespace Engine
 				e->boxCollider->System(&e->transform->m_Position, &e->transform->m_Size);
 			if (e->rectMesh && e->transform)
 				e->rectMesh->System(e->transform->m_Position, e->transform->m_Size, e->transform->m_Rotation);
+			if (e->circleMesh && e->transform)
+				e->circleMesh->System(e->transform->m_Position, e->transform->m_Size.x, e->transform->m_Rotation);
 			if (e->parent && e->transform)
 				e->parent->System(e->transform);
 

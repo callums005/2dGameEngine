@@ -204,6 +204,8 @@ e->transform = nullptr;
 | Transform | Stores position, size, velocity and rotation of an entity. | Vec2f pos, Vec2f size, Vec2f vel, float rotation |
 | BoxCollider | Allows 2D box collision. **Requires Transform**. | Vec2f size |
 | RectMesh | Renders a square or rectangle shape. **Requires Transform**. | int outlineThickness, RGBA outlineColour |
+| CircleMesh | Renders a circle shape. **Requires Transform**. Note the size of the circle is the radius and determined by the width(x value) of Transform.m_Size | int outlineThickness, RGBA outlineColour |
+| ConvexMesh | Renders a shape defined by a list of Type::Vec2f points. **Requires Transform**. | int outlineThickness, RGBA outlineColour, std::vector<Types::Vec2f> points |
 | Colour | Tells the renderer what colour to assign to the entity. **Requires Mesh**. | RGBA colour |
 | Texture | Tells the renderer what texture to assign to the entity **Requires Mesh** | STRING filePath |
 | Renderer | Renderers an entity to the screen. **Requires Mesh, Colour/Texture, Transform** | sf::Mesh object, int order, RenderType renderType, RenderShape shape |

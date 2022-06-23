@@ -58,6 +58,16 @@ namespace Engine
 						e->rectMesh->m_Shape.setTexture(nullptr);
 						e->rectMesh->m_Shape.setFillColor(e->colour->m_Colour.toSF());
 					}
+					else if (e->renderer->m_RenderShape == RenderShape::Circle && e->circleMesh && e->colour)
+					{
+						e->circleMesh->m_Shape.setTexture(nullptr);
+						e->circleMesh->m_Shape.setFillColor(e->colour->m_Colour.toSF());
+					}
+					else if (e->renderer->m_RenderShape == RenderShape::Convex && e->convexMesh && e->colour)
+					{
+						e->convexMesh->m_Shape.setTexture(nullptr);
+						e->convexMesh->m_Shape.setFillColor(e->colour->m_Colour.toSF());
+					}
 					break;
 				case RenderType::Texture:
 					if (e->renderer->m_RenderShape == RenderShape::Rectangle && e->rectMesh && e->texture)
@@ -66,6 +76,22 @@ namespace Engine
 						{
 							e->rectMesh->m_Shape.setFillColor(sf::Color::White);
 							e->rectMesh->m_Shape.setTexture(&e->texture->m_Texture);
+						}
+					}
+					else if (e->renderer->m_RenderShape == RenderShape::Circle && e->circleMesh && e->texture)
+					{
+						if (e->circleMesh->m_Shape.getTexture() != &e->texture->m_Texture)
+						{
+							e->circleMesh->m_Shape.setFillColor(sf::Color::White);
+							e->circleMesh->m_Shape.setTexture(&e->texture->m_Texture);
+						}
+					}
+					else if (e->renderer->m_RenderShape == RenderShape::Convex && e->convexMesh && e->texture)
+					{
+						if (e->convexMesh->m_Shape.getTexture() != &e->texture->m_Texture)
+						{
+							e->convexMesh->m_Shape.setFillColor(sf::Color::White);
+							e->convexMesh->m_Shape.setTexture(&e->texture->m_Texture);
 						}
 					}
 					break;

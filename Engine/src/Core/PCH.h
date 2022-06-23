@@ -32,7 +32,7 @@ namespace Engine
 
 	const enum class RenderShape
 	{
-		Rectangle
+		Rectangle, Circle, Convex
 	};
 
 	const enum class RenderType
