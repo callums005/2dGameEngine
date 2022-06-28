@@ -1,6 +1,6 @@
 # 2D Game Engine
 
-You can find the project Trello [here]("https://trello.com/b/G24FWYry/2d-game-engine")
+You can find the project Trello [here](https://trello.com/b/G24FWYry/2d-game-engine)
 
 ## Technical Specs
 - Language: C++
