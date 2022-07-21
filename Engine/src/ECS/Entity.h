@@ -10,6 +10,7 @@
 #include "Components/Texture.h"
 #include "Components/Renderer.h"
 #include "Components/Parent.h"
+#include "Components/Text.h"
 
 namespace Engine
 {
@@ -31,6 +32,7 @@ namespace Engine
 			delete texture;
 			delete renderer;
 			delete parent;
+			delete text;
 		}
 
 		// Components
@@ -44,7 +46,8 @@ namespace Engine
 		Components::Texture* texture = nullptr;
 		Components::Renderer* renderer = nullptr;
 		Components::Parent* parent = nullptr;
-		
+		Components::Text* text = nullptr;
+
 
 		// Entity Functions
 		boolean isEnabled() { return m_Enabled; }

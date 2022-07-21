@@ -68,6 +68,10 @@ namespace Engine
 						e->convexMesh->m_Shape.setTexture(nullptr);
 						e->convexMesh->m_Shape.setFillColor(e->colour->m_Colour.toSF());
 					}
+					else if (e->renderer->m_RenderShape == RenderShape::Text && e->text && e->colour)
+					{
+						e->text->m_Object.setFillColor(e->colour->m_Colour.toSF());
+					}
 					break;
 				case RenderType::Texture:
 					if (e->renderer->m_RenderShape == RenderShape::Rectangle && e->rectMesh && e->texture)

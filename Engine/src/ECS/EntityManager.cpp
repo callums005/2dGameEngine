@@ -23,7 +23,8 @@ namespace Engine
 				e->circleMesh->System(e->transform->m_Position, e->transform->m_Size.x, e->transform->m_Rotation);
 			if (e->parent && e->transform)
 				e->parent->System(e->transform);
-
+			if (e->text && e->transform)
+				e->text->System(e->transform->m_Position, e->transform->m_Size, e->transform->m_Rotation);
 		}
 	}
 	
