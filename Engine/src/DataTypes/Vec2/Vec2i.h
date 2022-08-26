@@ -2,7 +2,7 @@
 
 #include "../../Core/PCH.h"
 
-namespace Utilities
+namespace Types
 {
 	class Vec2i
 	{

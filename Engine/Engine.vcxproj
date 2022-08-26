@@ -88,6 +88,8 @@
   <ItemGroup>
     <ClInclude Include="src\ECS\ComponentBase.h" />
     <ClInclude Include="src\ECS\Components\BoxCollider.h" />
+    <ClInclude Include="src\ECS\Components\Button.h" />
+    <ClInclude Include="src\ECS\Components\Checkbox.h" />
     <ClInclude Include="src\ECS\Components\CircleMesh.h" />
     <ClInclude Include="src\ECS\Components\Colour.h" />
     <ClInclude Include="src\ECS\Components\ConvexMesh.h" />

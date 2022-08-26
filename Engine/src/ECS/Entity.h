@@ -11,6 +11,8 @@
 #include "Components/Renderer.h"
 #include "Components/Parent.h"
 #include "Components/Text.h"
+#include "Components/Button.h"
+#include "Components/Checkbox.h"
 
 namespace Engine
 {
@@ -33,6 +35,8 @@ namespace Engine
 			delete renderer;
 			delete parent;
 			delete text;
+			delete button;
+			delete checkbox;
 		}
 
 		// Components
@@ -47,7 +51,8 @@ namespace Engine
 		Components::Renderer* renderer = nullptr;
 		Components::Parent* parent = nullptr;
 		Components::Text* text = nullptr;
-
+		Components::Button* button = nullptr;
+		Components::Checkbox* checkbox = nullptr;
 
 		// Entity Functions
 		boolean isEnabled() { return m_Enabled; }

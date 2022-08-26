@@ -6,26 +6,30 @@ public:
 	Application() {}
 	~Application() {}
 
-	sf::Font font;
 	Engine::Entity* e;
-	int c = 0;
+	sf::Font Roboto;
+
+	void OnPress()
+	{
+		
+	}
 
 	void OnStart()
 	{
-		if (!font.loadFromFile("./res/fonts/roboto.ttf"))
-			Engine::Logger::Error("Unable to load font");
-	
+		if (!Roboto.loadFromFile("./res/fonts/roboto.ttf"))
+			printf("Unable to load font\n");
+
 		e = Engine::ECS::AddEntity("test");
 		e->transform = new Engine::Components::Transform(Types::Vec2f(10, 10), Types::Vec2f(1, 1), Types::Vec2f(0, 0), 0);
 		e->colour = new Engine::Components::Colour(Types::RGBA(255, 255, 0, 255));
-		e->text = new Engine::Components::Text(std::to_string(c), 24, &font);
+		e->text = new Engine::Components::Text("Button", 24, &Roboto);
 		e->renderer = new Engine::Components::Renderer(&e->text->m_Object, 0, Engine::RenderType::Colour, Engine::RenderShape::Text);
+		//e->button = new Engine::Components::Button(ButtonFunc(OnPress), Engine::MouseButton::MOUSE_BUTTON_LEFT, Types::Vec2f(10, 10), Types::Vec2f(50, 20));
+		e->checkbox = new Engine::Components::Checkbox(Engine::MouseButton::MOUSE_BUTTON_LEFT, Types::Vec2f(10, 10), Types::Vec2f(50, 20));
 	} 
 
 	void OnUpdate()
 	{
-		c++;
-		e->text->m_Text = std::to_string(c);
 	}
 
 	void OnExit()

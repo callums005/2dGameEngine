@@ -25,6 +25,10 @@ namespace Engine
 				e->parent->System(e->transform);
 			if (e->text && e->transform)
 				e->text->System(e->transform->m_Position, e->transform->m_Size, e->transform->m_Rotation);
+			if (e->button)
+				e->button->System();
+			if (e->checkbox)
+				e->checkbox->System();
 		}
 	}
 	
