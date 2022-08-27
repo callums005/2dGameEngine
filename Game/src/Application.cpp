@@ -9,11 +9,6 @@ public:
 	Engine::Entity* e;
 	sf::Font Roboto;
 
-	void OnPress()
-	{
-		
-	}
-
 	void OnStart()
 	{
 		if (!Roboto.loadFromFile("./res/fonts/roboto.ttf"))
@@ -24,8 +19,7 @@ public:
 		e->colour = new Engine::Components::Colour(Types::RGBA(255, 255, 0, 255));
 		e->text = new Engine::Components::Text("Button", 24, &Roboto);
 		e->renderer = new Engine::Components::Renderer(&e->text->m_Object, 0, Engine::RenderType::Colour, Engine::RenderShape::Text);
-		//e->button = new Engine::Components::Button(ButtonFunc(OnPress), Engine::MouseButton::MOUSE_BUTTON_LEFT, Types::Vec2f(10, 10), Types::Vec2f(50, 20));
-		e->checkbox = new Engine::Components::Checkbox(Engine::MouseButton::MOUSE_BUTTON_LEFT, Types::Vec2f(10, 10), Types::Vec2f(50, 20));
+		
 	} 
 
 	void OnUpdate()

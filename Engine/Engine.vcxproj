@@ -97,6 +97,7 @@
     <ClInclude Include="src\ECS\Components\RectMesh.h" />
     <ClInclude Include="src\ECS\Components\Renderer.h" />
     <ClInclude Include="src\ECS\Components\Text.h" />
+    <ClInclude Include="src\ECS\Components\TextInput.h" />
     <ClInclude Include="src\ECS\Components\Texture.h" />
     <ClInclude Include="src\ECS\Components\Transform.h" />
     <ClInclude Include="src\ECS\Entity.h" />

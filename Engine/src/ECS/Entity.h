@@ -13,6 +13,7 @@
 #include "Components/Text.h"
 #include "Components/Button.h"
 #include "Components/Checkbox.h"
+#include "Components/TextInput.h"
 
 namespace Engine
 {
@@ -37,6 +38,7 @@ namespace Engine
 			delete text;
 			delete button;
 			delete checkbox;
+			delete textInput;
 		}
 
 		// Components
@@ -53,6 +55,7 @@ namespace Engine
 		Components::Text* text = nullptr;
 		Components::Button* button = nullptr;
 		Components::Checkbox* checkbox = nullptr;
+		Components::TextInput* textInput = nullptr;
 
 		// Entity Functions
 		boolean isEnabled() { return m_Enabled; }
