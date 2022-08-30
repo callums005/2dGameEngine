@@ -30,7 +30,10 @@ namespace Engine
 			if (e->checkbox)
 				e->checkbox->System();
 			if (e->textInput && e->transform)
+			{
 				e->textInput->m_TextObject->System(e->transform->m_Position, e->transform->m_Size, e->transform->m_Rotation);
+				e->textInput->System();
+			}
 		}
 	}
 	

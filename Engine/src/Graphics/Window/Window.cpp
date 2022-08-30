@@ -151,11 +151,17 @@ namespace Engine
 			case sf::Event::KeyPressed:
 				EventDispatcher::GetEventFromName("KeyDown").KeyEvent->KeyCode = (Keys)e.key.code;
 				EventDispatcher::GetEventFromName("KeyDown").KeyEvent->State = true;
+				EventDispatcher::GetEventFromName("KeyDown").KeyEvent->ShiftModifier = e.key.shift;
+				EventDispatcher::GetEventFromName("KeyDown").KeyEvent->CtrlModifier = e.key.control;
+				EventDispatcher::GetEventFromName("KeyDown").KeyEvent->AltModifier = e.key.alt;
 				EventDispatcher::DispatchEvent(EventType::KeyDown);
 				break;
 			case sf::Event::KeyReleased:
 				EventDispatcher::GetEventFromName("KeyUp").KeyEvent->KeyCode = (Keys)e.key.code;
 				EventDispatcher::GetEventFromName("KeyUp").KeyEvent->State = true;
+				EventDispatcher::GetEventFromName("KeyUp").KeyEvent->ShiftModifier = e.key.shift;
+				EventDispatcher::GetEventFromName("KeyUp").KeyEvent->CtrlModifier = e.key.control;
+				EventDispatcher::GetEventFromName("KeyUp").KeyEvent->AltModifier = e.key.alt;
 				EventDispatcher::DispatchEvent(EventType::KeyUp);
 				break;
 			}
