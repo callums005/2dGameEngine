@@ -210,3 +210,7 @@ e->transform = nullptr;
 | Texture | Tells the renderer what texture to assign to the entity **Requires Mesh** | STRING filePath |
 | Renderer | Renderers an entity to the screen. **Requires Mesh, Colour/Texture, Transform** | sf::Mesh object, int order, RenderType renderType, RenderShape shape |
 | Parent | Sets the entity's parent object, use offset Transform to position away from parent. **Requires Parent.Transform, Transform** | size_t parentID, Transform* parentTransform, Transform offsetTransform |
+| Text | Displays a string of text, *note that a SFML font must be loaded into a variable*. **Requires Transform** | STRING text, int fontSize, sf::Font* font |
+| Button | Fires a callback when a button is pressed, *note you must pair the button with text, shape or texture for the button to be visible. | std::function<void()> callback, MouseButton button, Vec2f pos, Vec2f size |
+| Checkbox | Works the same way as a button however it stores a value with is switched when the button is pressed. | MouseButton button, Vec2f pos, Vec2f size |
+| TextInput | When focused on, it will store all characters typed in a STRING array, *note that a SFML font must be loaded into a variable*. **Requires Transform** | STRING placeHolder, int fontSize, sf::Font* font, Vec2f pos, Vec2f size |

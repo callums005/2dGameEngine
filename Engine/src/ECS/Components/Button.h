@@ -12,6 +12,10 @@ namespace Engine
 
 	namespace Components
 	{
+		/// <summary>
+		/// When the mouse button is pressed, it checks if the cursor is in the defined box, if so,
+		/// fires the user-defined callback.
+		/// </summary>
 		class Button
 		{
 		public:
@@ -29,7 +33,6 @@ namespace Engine
 
 				int mouseX = Input::GetMousePos().first;
 				int mouseY = Input::GetMousePos().second;
-
 
 				if (mouseX >= m_Position.x && mouseX <= m_Position.x + m_Size.x
 					&& mouseY >= m_Position.y && mouseY <= m_Position.y + m_Size.y

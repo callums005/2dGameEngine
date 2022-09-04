@@ -10,6 +10,10 @@ namespace Engine
 {
 	namespace Components
 	{
+		/// <summary>
+		/// When a mouse button is pressed, it checks if the mouse is within a defined box, if so
+		/// it will toggle the state of the stored value.
+		/// </summary>
 		class Checkbox
 		{
 		public:

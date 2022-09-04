@@ -8,10 +8,13 @@
 extern Engine::Game* Engine::CreateGame();
 
 /// <summary>
-/// Entry Point to the application:
-/// Creates the main window and attaches it to the Engine::Game class
-/// Calls OnStart, Run->OnUpdate, OnExit functions from the game client
+/// This is the entry point of the application,
+/// It creates and stores a window and game application, 
+/// then calls the client side functions and runs the main game loop.
 /// </summary>
+/// <param name="argc">Number of arguments</param>
+/// <param name="argv">Arguments</param>
+/// <returns>Exit code</returns>
 int main(int argc, char** argv)
 {
 	Engine::Window* window = new Engine::Window();

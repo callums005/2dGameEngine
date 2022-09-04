@@ -12,6 +12,9 @@ namespace Engine
 {
 	namespace Components
 	{
+		/// <summary>
+		/// Stores a circle shape from the SFML libary to be rendered by the renderer.
+		/// </summary>
 		class CircleMesh
 		{
 		public:
