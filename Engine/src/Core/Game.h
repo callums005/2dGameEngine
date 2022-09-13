@@ -5,6 +5,7 @@
 #include "../Graphics/Window/Window.h"
 #include "../EventSystem/EventDispatcher.h"
 #include "../ECS/EntityManager.h"
+#include "../Scenes/SceneManager.h"
 
 namespace Engine
 {

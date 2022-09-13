@@ -23,9 +23,7 @@ int main(int argc, char** argv)
 
 	Engine::Game* app = Engine::CreateGame();
 	app->SetWindow(window);
-	app->OnStart();
 	app->Run();
-	app->OnExit();
 	delete app;
 
 	window->CloseWindow();

@@ -18,7 +18,12 @@ namespace Engine
 	/// </summary>
 	void Game::Run()
 	{
+		Scene* scene = SceneManager::GetScene();
+		
 		EventDispatcher::DispatchEvent(EventType::OnApplicationStart, true);
+		OnStart();
+		if (scene)
+			scene->Init();
 
 		// Main Game Loop
 		while (m_Window->GetWindowOpenState())
@@ -27,9 +32,13 @@ namespace Engine
 			m_Window->PollEvents();
 			m_Window->Render();
 			OnUpdate();
+			if (scene)
+				scene->Update();
 			Input::UpdateReleasedStates();
 		}
 
+		OnExit();
+		SceneManager::ClearScene();
 		EventDispatcher::DispatchEvent(EventType::OnApplicationExit, true);
 	}
 

@@ -86,6 +86,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Scenes\SceneManager.h" />
     <ClInclude Include="src\ECS\ComponentBase.h" />
     <ClInclude Include="src\ECS\Components\BoxCollider.h" />
     <ClInclude Include="src\ECS\Components\Button.h" />
@@ -118,8 +119,10 @@
     <ClInclude Include="src\Logger\Logger.h" />
     <ClInclude Include="src\Maths.h" />
     <ClInclude Include="src\Graphics\Window\Window.h" />
+    <ClInclude Include="src\Scenes\Scene.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Scenes\SceneManager.cpp" />
     <ClCompile Include="src\ECS\EntityManager.cpp" />
     <ClCompile Include="src\Input\Input.cpp" />
     <ClCompile Include="src\Core\Game.cpp" />

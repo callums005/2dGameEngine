@@ -7,6 +7,7 @@
 #include "Input/Input.h"
 #include "ECS/Entity.h"
 #include "ECS/EntityManager.h"
+#include "Scenes/SceneManager.h"
 
 // ----------------------- Entry Point [DO NOT PUT ANYTHING AFTER THIS] ----------------------------
 #include "Core/EntryPoint.h"

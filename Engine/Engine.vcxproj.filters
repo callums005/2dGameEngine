@@ -111,6 +111,12 @@
     <ClInclude Include="src\ECS\Components\TextInput.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Scenes\Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scenes\SceneManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Game.cpp">
@@ -126,6 +132,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\ECS\EntityManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\SceneManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

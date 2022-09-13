@@ -30,7 +30,7 @@ namespace Engine
 		static boolean IsMouseButtonUp(MouseButton _button);
 		static std::pair<int, int> GetMousePos();
 	private:
-		static InputState inline keyStates[34];
+		static InputState inline keyStates[100]; // 34
 		static InputState inline mouseButtonStates[6];
 		static int inline mouseX = 0;
 		static int inline mouseY = 0;

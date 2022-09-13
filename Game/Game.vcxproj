@@ -91,6 +91,10 @@
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Scenes\AnotherTestScene.h" />
+    <ClInclude Include="src\Scenes\TestScene.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

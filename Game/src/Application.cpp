@@ -1,13 +1,23 @@
 #include "Engine.h"
 
+#include "Scenes/TestScene.h"
+#include "Scenes/AnotherTestScene.h"
+
 class Application : public Engine::Game
 {
 public:
 	Application() {}
-	~Application() {}
+	~Application() 
+	{
+		delete testScene;
+	}
 
 	Engine::Entity* e;
 	sf::Font Roboto;
+
+	int sceneID = 0;
+
+	TestScene* testScene = new TestScene();
 
 	void OnStart()
 	{
@@ -20,15 +30,23 @@ public:
 		//e->text = new Engine::Components::Text("Button", 24, &Roboto);
 		e->textInput = new Engine::Components::TextInput("Placeholder", 24, &Roboto, Types::Vec2f(10, 10), Types::Vec2f(50, 75));
 		e->renderer = new Engine::Components::Renderer(&e->textInput->m_TextObject->m_Object, 0, Engine::RenderType::Colour, Engine::RenderShape::Text);
-		
 	} 
 
 	void OnUpdate()
 	{
+		if (Engine::Input::IsKeyReleasedThisFrame(Engine::Keys::KEY_SPACE))
+		{
+			if (sceneID == 0)
+			{
+				sceneID = 1;
+				Engine::SceneManager::SetScene(testScene);
+			}
+		}
 	}
 
 	void OnExit()
 	{
+		
 	}
 };
 
