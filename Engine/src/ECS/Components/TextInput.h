@@ -70,7 +70,7 @@ namespace Engine
 
 			void KeyEventFunc(Event& e)
 			{
-				if (e.KeyEvent->KeyCode == Keys::KEY_BACKSPACE)
+				if (e.KeyEvent->KeyCode == Keys::KEY_BACKSPACE && recordText)
 				{
 					if (m_Value != "")
 						m_Value.resize(m_Value.size() - 1);
@@ -85,6 +85,9 @@ namespace Engine
 					if (e.KeyEvent->KeyCode < Keys::KEY_LBRACKET || e.KeyEvent->KeyCode > Keys::KEY_SPACE)
 						if (e.KeyEvent->KeyCode < Keys::KEY_ADD || e.KeyEvent->KeyCode > Keys::KEY_DIVIDE)
 							return;
+
+				if (!recordText)
+					return;
 
 				if (e.KeyEvent->ShiftModifier)
 				{

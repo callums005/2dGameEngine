@@ -20,6 +20,6 @@ public:
 
 	void Close() override
 	{
-
+		Engine::Logger::Info("Closed AnotherTestScene");
 	}
 };

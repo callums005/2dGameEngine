@@ -5,6 +5,9 @@ namespace Engine
 	
 	void SceneManager::SetScene(Scene* scene)
 	{
+		if (m_CurrentScene == scene)
+			return;
+
 		ClearScene();
 
 		m_CurrentScene = scene;
