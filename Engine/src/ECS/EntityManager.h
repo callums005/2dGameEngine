@@ -7,7 +7,7 @@
 namespace Engine
 {
 	typedef std::vector<Entity*> EntityVector;
-	typedef std::map<std::string, EntityVector> EntityMap;
+	typedef std::map<std::string, EntityVector> EntityMap; // TODO unordered map
 
 	class ECS 
 	{

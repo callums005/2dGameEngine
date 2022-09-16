@@ -6,7 +6,7 @@ You can find the project Trello [here](https://trello.com/b/G24FWYry/2d-game-eng
 - Language: C++
 - IDE: Visual Studio 2022
 - Libarary(ies):
-	- [SFML](https://www.sfml-dev.org/)
+	- [SFML](https://www.sfml-dev.org/) (For renderering, audio & camera)
 
 ---
 
@@ -214,3 +214,16 @@ e->transform = nullptr;
 | Button | Fires a callback when a button is pressed, *note you must pair the button with text, shape or texture for the button to be visible. | std::function<void()> callback, MouseButton button, Vec2f pos, Vec2f size |
 | Checkbox | Works the same way as a button however it stores a value with is switched when the button is pressed. | MouseButton button, Vec2f pos, Vec2f size |
 | TextInput | When focused on, it will store all characters typed in a STRING array, *note that a SFML font must be loaded into a variable*. **Requires Transform** | STRING placeHolder, int fontSize, sf::Font* font, Vec2f pos, Vec2f size |
+
+# Scene Management
+
+## Creating Scenes
+It is important to apply the `Engine::Scene` base class to any class you want to use as a scene.
+```cpp
+class TestScene : public Engine::Scene
+```
+
+
+
+
+

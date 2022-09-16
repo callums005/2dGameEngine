@@ -28,6 +28,7 @@ namespace Engine
 		// Main Game Loop
 		while (m_Window->GetWindowOpenState())
 		{
+			scene = SceneManager::GetScene();
 			ECS::Update();
 			m_Window->PollEvents();
 			m_Window->Render();
